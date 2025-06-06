@@ -75,6 +75,7 @@ class FreeplayState extends MusicBeatState
 		eligibleChars.push("tankman");
 		eligibleChars.push("prisma");
 		eligibleChars.push("Tails");
+		eligibleChars.push("inno");
 		// eligibleChars.push("spirit");
 
 		curSelected = 0;

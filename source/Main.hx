@@ -165,6 +165,11 @@ class Main extends Sprite
 			"Tune-A-Fish", 0x4c6b9b, "Ket Overkill");
 
 		characterColors["gf"] = 0xa5004d;
+		characterColors["inno"] = 0x000000;
+		characterColors["innoFp"] = 0x000000;
+		characterColors["innohead"] = 0x000000;
+		characterColors["Tails"] = 0xff9b21;
+		characterColors["Tails-player"] = 0xff9b21;
 		characterColors["prisma"] = 0x9fd5ed;
 		characterColors["skid"] = 0xa2a2a2;
 		characterColors["pump"] = 0xd57e00;

@@ -158,6 +158,93 @@ class Character extends FlxNestedSkewSprite
 				posOffsets = [-180, 0];
 				camOffsets = [180, 0];
 
+			case 'inno':
+				frames = Paths.getSparrowAtlasFunk("characters/RECOVER_RECOVER_negro2");
+				animation.addByPrefix('idle', 'idle instance', 24, false);
+				animation.addByPrefix('singDOWN', 'down instance', 24, false);
+				animation.addByPrefix('singLEFT', 'left instance', 24, false);
+				animation.addByPrefix('singRIGHT', 'right instance', 24, false);
+				animation.addByPrefix('singUP', 'up instance', 24, false);
+
+				addOffset('idle', 39, 114);
+				addOffset("singDOWN", 173, -41);
+				addOffset("singLEFT", -18, -27);
+				addOffset("singRIGHT", -8, -84);
+				addOffset("singUP", 55, 191);
+
+				playAnim('idle');
+				posOffsets = [0, -90];
+				camOffsets = [-160, -190];
+
+			case 'innohead':
+				frames = Paths.getSparrowAtlasFunk("characters/RECOVER_RECOVER_negro2");
+				animation.addByPrefix('idle', 'Idle', 24, false);
+				animation.addByPrefix('singDOWN', 'Down', 24, false);
+				animation.addByPrefix('singLEFT', 'Left', 24, false);
+				animation.addByPrefix('singRIGHT', 'Right', 24, false);
+				animation.addByPrefix('singUP', 'Up', 24, false);
+				animation.addByPrefix('Aparece sexo', 'Appears', 24, false);
+
+				addOffset('idle', 0, 0);
+				addOffset("singDOWN", 568, 145);
+				addOffset("singLEFT", -10, 10);
+				addOffset("singRIGHT", -149, -226);
+				addOffset("singUP", -6, 53);
+				addOffset('idle', 0, 0);
+
+				playAnim('idle');
+				posOffsets = [0, -1710];
+				camOffsets = [20, -90];
+			case 'Tails':
+				frames = Paths.getSparrowAtlasFunk("characters/Tails");
+				animation.addByPrefix('idle', 'Tails Idle', 24, false);
+				animation.addByPrefix('singDOWN', 'Tails Down0', 24, false);
+				animation.addByPrefix('singLEFT', 'Tails Left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'Tails Right0', 24, false);
+				animation.addByPrefix('singUP', 'Tails Up0', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Tails Down MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Tails Left MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Tails Right MISS', 24, false);
+				animation.addByPrefix('singUPmiss', 'Tails Up MISS', 24, false);
+
+				addOffset('idle', -95, 124);
+				addOffset("singDOWN", -3, 7);
+				addOffset("singLEFT", -88, 122);
+				addOffset("singRIGHT", -88, 122);
+				addOffset("singUP", 20, 174);
+				addOffset("singDOWNmiss", -5, 22);
+				addOffset("singLEFTmiss", -88, 122);
+				addOffset("singRIGHTmiss", 99, 124);
+				addOffset("singUPmiss", 12, 174);
+
+				playAnim('idle');
+				posOffsets = [0, 0];
+				camOffsets = [0, 0];
+			case 'Tails-player':
+				frames = Paths.getSparrowAtlasFunk("characters/Tails");
+				animation.addByPrefix('idle', 'Tails Idle', 24, false);
+				animation.addByPrefix('singDOWN', 'Tails Down0', 24, false);
+				animation.addByPrefix('singLEFT', 'Tails Left0', 24, false);
+				animation.addByPrefix('singRIGHT', 'Tails Right0', 24, false);
+				animation.addByPrefix('singUP', 'Tails Up0', 24, false);
+				animation.addByPrefix('singDOWNmiss', 'Tails Down MISS', 24, false);
+				animation.addByPrefix('singLEFTmiss', 'Tails Left MISS', 24, false);
+				animation.addByPrefix('singRIGHTmiss', 'Tails Right MISS', 24, false);
+				animation.addByPrefix('singUPmiss', 'Tails Up MISS', 24, false);
+
+				addOffset('idle', -95, 124);
+				addOffset("singDOWN", -3, 7);
+				addOffset("singLEFT", -88, 122);
+				addOffset("singRIGHT", -88, 122);
+				addOffset("singUP", 20, 174);
+				addOffset("singDOWNmiss", -5, 22);
+				addOffset("singLEFTmiss", -88, 122);
+				addOffset("singRIGHTmiss", 99, 124);
+				addOffset("singUPmiss", 12, 174);
+
+				playAnim('idle');
+				posOffsets = [0, 0];
+				camOffsets = [0, 0];
 			case 'lily':
 				createAtlas();
 

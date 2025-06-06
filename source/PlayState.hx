@@ -1001,6 +1001,28 @@ class PlayState extends MusicBeatState
 				fore.antialiasing = true;
 				fore.active = false;
 				add(fore);
+			case 'black':
+				curStage = 'black';
+
+				defaultCamZoom = 0.8;
+
+				var bg:FlxSprite = new FlxSprite(0, 100).loadGraphic(Paths.image('nmi/Innocence_bg_1'));
+	                	bg.setGraphicSize(Std.int(bg.width * 1.4), Std.int(bg.height * 1.4));
+		                bg.updateHitbox();
+                  		add(bg);
+
+				var floor:FlxSprite = new FlxSprite(-1153, -300).loadGraphic(Paths.getImageFunk('nmi/Floor'));
+		                floor.setGraphicSize(Std.int(floor.width * 1.3));
+                		floor.updateHitbox();
+                		add(floor);
+
+	                	if (Conductor.songPosition >= 0)
+                		{
+		                	var currentBeat:Float = (Conductor.songPosition / 900) * (Conductor.bpm / 90);
+                 			var tweenY:Float = 87 - 53 * Math.sin((currentBeat * 0.25) * Math.PI);
+
+	                		bg.y = tweenY;
+		                }
 			case 'atlantaStage':
 				curStage = 'atlantaStage';
 

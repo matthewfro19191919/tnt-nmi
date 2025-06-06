@@ -74,6 +74,7 @@ class FreeplayState extends MusicBeatState
 		eligibleChars.push("senpai");
 		eligibleChars.push("tankman");
 		eligibleChars.push("prisma");
+		eligibleChars.push("Tails");
 		// eligibleChars.push("spirit");
 
 		curSelected = 0;
@@ -107,6 +108,7 @@ class FreeplayState extends MusicBeatState
 		addSong("Bopeebo", 1, "dad", 0x010);
 		addSong("Roses", 1, "senpai", 0x010);
 		addSong("Ugh", 1, "tankman", 0x010);
+		addSong("nomoreinnocence", 1, "inno", 0x010);
 
 		// LOAD CHARACTERS
 

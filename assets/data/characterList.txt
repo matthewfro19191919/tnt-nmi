@@ -9,3 +9,5 @@ lily
 prisma
 atlanta
 tankman
+inno
+Tails

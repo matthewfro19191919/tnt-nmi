@@ -159,7 +159,7 @@ class Character extends FlxNestedSkewSprite
 				camOffsets = [180, 0];
 
 			case 'inno':
-				frames = Paths.getSparrowAtlasFunk("characters/RECOVER_RECOVER_negro2");
+				frames = Paths.getSparrowAtlas("characters/RECOVER_RECOVER_negro2");
 				animation.addByPrefix('idle', 'idle instance', 24, false);
 				animation.addByPrefix('singDOWN', 'down instance', 24, false);
 				animation.addByPrefix('singLEFT', 'left instance', 24, false);
@@ -177,7 +177,7 @@ class Character extends FlxNestedSkewSprite
 				camOffsets = [-160, -190];
 
 			case 'innohead':
-				frames = Paths.getSparrowAtlasFunk("characters/RECOVER_RECOVER_negro2");
+				frames = Paths.getSparrowAtlas("characters/RECOVER_RECOVER_negro2");
 				animation.addByPrefix('idle', 'Idle', 24, false);
 				animation.addByPrefix('singDOWN', 'Down', 24, false);
 				animation.addByPrefix('singLEFT', 'Left', 24, false);
@@ -196,7 +196,7 @@ class Character extends FlxNestedSkewSprite
 				posOffsets = [0, -1710];
 				camOffsets = [20, -90];
 			case 'Tails':
-				frames = Paths.getSparrowAtlasFunk("characters/Tails");
+				frames = Paths.getSparrowAtlas("characters/Tails");
 				animation.addByPrefix('idle', 'Tails Idle', 24, false);
 				animation.addByPrefix('singDOWN', 'Tails Down0', 24, false);
 				animation.addByPrefix('singLEFT', 'Tails Left0', 24, false);
@@ -221,7 +221,7 @@ class Character extends FlxNestedSkewSprite
 				posOffsets = [0, 0];
 				camOffsets = [0, 0];
 			case 'Tails-player':
-				frames = Paths.getSparrowAtlasFunk("characters/Tails");
+				frames = Paths.getSparrowAtlas("characters/Tails");
 				animation.addByPrefix('idle', 'Tails Idle', 24, false);
 				animation.addByPrefix('singDOWN', 'Tails Down0', 24, false);
 				animation.addByPrefix('singLEFT', 'Tails Left0', 24, false);

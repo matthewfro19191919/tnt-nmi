@@ -45,6 +45,7 @@ class Character extends FlxNestedSkewSprite
 	public var beganLoading:Bool = false;
 	public var modelName:String = "";
 	public var modelScale:Float = 1;
+	public var modelOrigBPM:Int;
 	public var model:ModelThing;
 	public var modelType:String = "md2";
 	public var initYaw:Float = 0;
@@ -62,6 +63,8 @@ class Character extends FlxNestedSkewSprite
 	public var noLoopList:Array<String> = [];
 	public var isGlass:Bool = false;
 
+	public var shimmer:Bool = false;
+
 	public static var modelMutex:Bool = false;
 	public static var modelMutexThing:ModelThing;
 
@@ -70,6 +73,8 @@ class Character extends FlxNestedSkewSprite
 
 	public var atlasContainer:AtlasThing;
 	public var atlasActive:Bool = false;
+
+	public var isPlayer3 = false;
 
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false)
 	{
@@ -81,8 +86,70 @@ class Character extends FlxNestedSkewSprite
 		// var tex:FlxAtlasFrames;
 		antialiasing = true;
 
+		var library:String = null;
+		var loadFrom = Main.modelView.sprite;
+
 		switch (curCharacter)
 		{
+			case 'monkey':
+				modelName = "monkey";
+				var multiplier = Conductor.bpm / 100;
+				animSpeed = [
+					"default" => 2.1 * multiplier,
+					"idle" => 1.5 * multiplier,
+					"singLEFT" => 2.5 * multiplier
+				];
+				for (thing in ["singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd"])
+					animSpeed[thing] = 1.5;
+				isModel = true;
+				noLoopList = [
+					"idle", "singUP", "singLEFT", "singRIGHT", "singDOWN", "singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd", "idleEnd"
+				];
+				ambient = 1;
+				specular = 1;
+				diffuse = 1;
+				initYaw = -50;
+				viewX = 600;
+				viewY = 600;
+				if (isPlayer)
+					posOffsets = [viewX / 2, -550];
+				else
+					posOffsets = [-viewX / 2, -550];
+				if (isPlayer)
+					camOffsets = [-viewX / 2, viewY / 2];
+				else
+					camOffsets = [viewX / 2, viewY / 2];
+
+			case 'bf-poly':
+				modelName = "boyfriend";
+				var multiplier = Conductor.bpm / 100;
+				animSpeed = [
+					"default" => 2.1 * multiplier,
+					"idle" => 1.5 * multiplier,
+					"singLEFT" => 2.5 * multiplier
+				];
+				for (thing in ["singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd"])
+					animSpeed[thing] = 1.5;
+				isModel = true;
+				noLoopList = [
+					"idle", "singUP", "singLEFT", "singRIGHT", "singDOWN", "singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd", "idleEnd"
+				];
+				ambient = 1;
+				specular = 1;
+				diffuse = 1;
+				initYaw = -50;
+				viewX = 600;
+				viewY = 600;
+				if (isPlayer)
+					posOffsets = [viewX / 2, -550];
+				else
+					posOffsets = [-viewX / 2, -550];
+				if (isPlayer)
+					camOffsets = [-viewX / 2, viewY / 2];
+				else
+					camOffsets = [viewX / 2, viewY / 2];
+
+
 			case 'spirit':
 				frames = Paths.getSparrowAtlasFunk('characters/spirit');
 				animation.addByPrefix('idle', "idle spirit", 24, false);

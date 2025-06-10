@@ -110,6 +110,10 @@ class FreeplayState extends MusicBeatState
 		addSong("Roses", 1, "senpai", 0x010);
 		addSong("Ugh", 1, "tankman", 0x010);
 		addSong("nomoreinnocence", 1, "inno", 0x010);
+		addSong("Vertex", 1, "monkey", 0x010);
+		addSong("Mesh", 1, "monkey", 0x010);
+		addSong("Polygon", 1, "monkey", 0x010);
+
 
 		// LOAD CHARACTERS
 

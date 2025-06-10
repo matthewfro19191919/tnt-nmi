@@ -121,7 +121,6 @@ class PlayState extends MusicBeatState
 	public static final schoolScared = ["roses"];
 	public static final evilSchoolSongs = ["thorns"];
 	public static final pixelSongs = ["senpai", "roses", "thorns"];
-	public static final monkeySongs = ["vertex", "mesh", "polygon"];
 
 	private var camFocus:String = "";
 	private var camTween:FlxTween;
@@ -221,7 +220,7 @@ class PlayState extends MusicBeatState
 
 	private var rsg:FlxSprite = new FlxSprite();
 
-	var dialogue:Array<String> = [':bf:strange code', ':dad:>:]'];
+	// var dialogue:Array<String> = [':bf:strange code', ':dad:>:]'];
 	/*var bfPos:Array<Array<Float>> = [
 										[975.5, 862],
 										[975.5, 862],
@@ -577,10 +576,6 @@ class PlayState extends MusicBeatState
 			if (spookySongs.contains(SONG.song.toLowerCase()))
 			{
 				stageCheck = 'spooky';
-			}
-			if (monkeySongs.contains(SONG.song.toLowerCase()))
-			{
-				stageCheck = 'monkey';
 			}
 			else if (phillySongs.contains(SONG.song.toLowerCase()))
 			{
@@ -1191,16 +1186,6 @@ class PlayState extends MusicBeatState
 					man6.animation.play("tank3");
 				});
 
-			case 'monkey':
-			defaultCamZoom = 0.9;
-			curStage = 'monkey';
-			var bg:FlxSprite = new FlxSprite(-600, -200).loadGraphic('assets/images/blender.png');
-			// bg.setGraphicSize(Std.int(bg.width * 2.5));
-			// bg.updateHitbox();
-			bg.antialiasing = true;
-			bg.scrollFactor.set(0.9, 0.9);
-			bg.active = false;
-			add(bg);
 			case 'prismaStage':
 				defaultCamZoom = 0.8;
 				curStage = 'prismaStage';
@@ -1564,11 +1549,11 @@ class PlayState extends MusicBeatState
 			add(comboUI);
 		}
 
-	        var doof:DialogueBox = new DialogueBox(false, dialogue);
-		doof.x += 70;
-		doof.y = FlxG.height * 0.5;
-		doof.scrollFactor.set();
-		doof.finishThing = startCountdown;
+		// var doof:DialogueBox = new DialogueBox(false, dialogue);
+		// doof.x += 70;
+		// doof.y = FlxG.height * 0.5;
+		// doof.scrollFactor.set();
+		// doof.finishThing = startCountdown;
 
 		Conductor.songPosition = -5000;
 
@@ -1723,7 +1708,7 @@ class PlayState extends MusicBeatState
 		scoreTxt.cameras = [camScore];
 		if (Config.comboParticles)
 			coolnessSprite.cameras = [camHUD];
-		doof.cameras = [camHUD];
+		// doof.cameras = [camHUD];
 
 		healthBarP1.visible = false;
 		healthBarP2.visible = false;
@@ -1816,44 +1801,8 @@ class PlayState extends MusicBeatState
 			startCountdown();
 		}
 
-         	if (SONG.song.toLowerCase() == 'vertex' || SONG.song.toLowerCase() == 'mesh' || SONG.song.toLowerCase() == 'polygon')
-		{
-			blenderIntro(doof);
-	 	}
-
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_DOWN, keyShitTap, false, 1);
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, keyShitRelease, false);
-	}
-
-	function blenderIntro(?dialogueBox:DialogueBox):Void
-	{
-		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
-		black.scrollFactor.set();
-		add(black);
-
-		new FlxTimer().start(0.3, function(tmr:FlxTimer)
-		{
-			black.alpha -= 0.15;
-
-			if (black.alpha > 0)
-			{
-				tmr.reset(0.3);
-			}
-			else
-			{
-				if (dialogueBox != null)
-				{
-					inCutscene = true;
-
-					add(dialogueBox);
-				}
-				else
-					startCountdown();
-
-				remove(black);
-				FlxDestroyUtil.destroy(tmr);
-			}
-		});
 	}
 
 	function posChar(char:Character, xPos:Float, yPos:Float)

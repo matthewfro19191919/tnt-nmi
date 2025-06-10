@@ -92,63 +92,30 @@ class Character extends FlxNestedSkewSprite
 		switch (curCharacter)
 		{
 			case 'monkey':
+				// DD: Okay, don't load models here cuz the engine will crash with more than one model
+
+				// model = new ModelThing("monkey", Main.modelView, 100, 80);
+				// model = new ModelThing("boyfriend", Main.modelView, 1.5, 80);
 				modelName = "monkey";
-				var multiplier = Conductor.bpm / 100;
-				animSpeed = [
-					"default" => 2.1 * multiplier,
-					"idle" => 1.5 * multiplier,
-					"singLEFT" => 2.5 * multiplier
-				];
-				for (thing in ["singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd"])
-					animSpeed[thing] = 1.5;
+				modelScale = 90;
+				modelOrigBPM = 75;
 				isModel = true;
-				noLoopList = [
-					"idle", "singUP", "singLEFT", "singRIGHT", "singDOWN", "singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd", "idleEnd"
-				];
-				ambient = 1;
-				specular = 1;
-				diffuse = 1;
-				initYaw = -50;
-				viewX = 600;
-				viewY = 600;
-				if (isPlayer)
-					posOffsets = [viewX / 2, -550];
-				else
-					posOffsets = [-viewX / 2, -550];
-				if (isPlayer)
-					camOffsets = [-viewX / 2, viewY / 2];
-				else
-					camOffsets = [viewX / 2, viewY / 2];
+				loadGraphicFromSprite(loadFrom);
+				scale.x = scale.y = 1.4;
+				initYaw = 0;
+				updateHitbox();
 
 			case 'bf-poly':
+				// model = new ModelThing("boyfriend", Main.modelViewBF, 1.5, 80);
 				modelName = "boyfriend";
-				var multiplier = Conductor.bpm / 100;
-				animSpeed = [
-					"default" => 2.1 * multiplier,
-					"idle" => 1.5 * multiplier,
-					"singLEFT" => 2.5 * multiplier
-				];
-				for (thing in ["singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd"])
-					animSpeed[thing] = 1.5;
+				modelScale = 1.2;
+				modelOrigBPM = 75;
 				isModel = true;
-				noLoopList = [
-					"idle", "singUP", "singLEFT", "singRIGHT", "singDOWN", "singUPEnd", "singLEFTEnd", "singRIGHTEnd", "singDOWNEnd", "idleEnd"
-				];
-				ambient = 1;
-				specular = 1;
-				diffuse = 1;
-				initYaw = -50;
-				viewX = 600;
-				viewY = 600;
-				if (isPlayer)
-					posOffsets = [viewX / 2, -550];
-				else
-					posOffsets = [-viewX / 2, -550];
-				if (isPlayer)
-					camOffsets = [-viewX / 2, viewY / 2];
-				else
-					camOffsets = [viewX / 2, viewY / 2];
-
+				loadGraphicFromSprite(loadFrom);
+				scale.x = scale.y = 1.6;
+				updateHitbox();
+				initYaw = 45;
+				flipX = true;
 
 			case 'spirit':
 				frames = Paths.getSparrowAtlasFunk('characters/spirit');

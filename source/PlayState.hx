@@ -121,6 +121,7 @@ class PlayState extends MusicBeatState
 	public static final schoolScared = ["roses"];
 	public static final evilSchoolSongs = ["thorns"];
 	public static final pixelSongs = ["senpai", "roses", "thorns"];
+	public static final monkeySongs = ["vertex", "mesh", "polygon"];
 
 	private var camFocus:String = "";
 	private var camTween:FlxTween;
@@ -576,6 +577,10 @@ class PlayState extends MusicBeatState
 			if (spookySongs.contains(SONG.song.toLowerCase()))
 			{
 				stageCheck = 'spooky';
+			}
+			if (monkeySongs.contains(SONG.song.toLowerCase()))
+			{
+				stageCheck = 'monkey';
 			}
 			else if (phillySongs.contains(SONG.song.toLowerCase()))
 			{

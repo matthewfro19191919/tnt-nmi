@@ -170,6 +170,8 @@ class Main extends Sprite
 		characterColors["inno"] = 0x000000;
 		characterColors["innoFp"] = 0x000000;
 		characterColors["innohead"] = 0x000000;
+		characterColors["monkey"] = 0x838383;
+		characterColors["bf-poly"] = 0x31b0d1;
 		characterColors["Tails"] = 0xff9b21;
 		characterColors["Tails-player"] = 0xff9b21;
 		characterColors["prisma"] = 0x9fd5ed;
